@@ -26,15 +26,15 @@ class Cart extends CI_Controller {
 
     $this->cart->insert($data);
 
-    redirect('cart');
+    redirect('products');
 
   }
 
   // Empty ccart
-  public function clear()
+  public function reset()
   {
     $this->cart->destroy();
-    redirect('cart');
+    redirect('products');
   }
 
   // Save cart to order and  
@@ -46,8 +46,8 @@ class Cart extends CI_Controller {
     $order_id = "$order_id";
 
     $veritrans = new Veritrans;
-    $veritrans->merchant_id = 'change_me';
-    $veritrans->merchant_hash = 'change_me';
+    $veritrans->merchant_id = '';
+    $veritrans->merchant_hash = '';
     $veritrans->settlement_type = '01';
     $veritrans->order_id = $order_id;
     $veritrans->session_id = $this->session->userdata('session_id');

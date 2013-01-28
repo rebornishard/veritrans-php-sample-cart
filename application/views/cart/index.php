@@ -23,7 +23,7 @@
 			<?= form_hidden($i.'[rowid]', $items['rowid']); ?>
 
 			<tr>
-			  <td><?= form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
+				<td><center><?= $items['qty'] ?></center></td>
 			  <td>
 				<?= $items['name']; ?>
 
@@ -70,7 +70,7 @@
       <tr><td>SHIPPING_METHOD          </td><td><input type="text" name="SHIPPING_METHOD" value="N"></td></tr>
     </table>
     
-		<p><?= form_submit('','Checkout'); ?></p>
+		<p><?= form_submit('','Checkout'); ?> <?= anchor('cart/reset', 'Reset Cart') ?></p>
 
 	</div>
 </div>
